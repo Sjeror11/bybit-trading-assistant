@@ -1,0 +1,52 @@
+# Virtuální prostředí
+venv/
+env/
+ENV/
+venvn/
+
+# Node.js
+node_modules/
+
+# Konfigurační soubory s citlivými údaji
+.env
+.env.*
+!.env.example
+!.env.template
+config/config.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logy a data
+logs/*
+!logs/.gitkeep
+data/*
+!data/.gitkeep
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
