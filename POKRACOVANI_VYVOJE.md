@@ -19,7 +19,7 @@ Pro rychlé a efektivní pokračování ve vývoji jsou nejdůležitější tyto
    - Parametry jednotlivých strategií
    - Testování a vyhodnocování
 
-## Aktuální stav projektu (aktualizováno 31.5.2025)
+## Aktuální stav projektu (aktualizováno 02.06.2025)
 
 **🟢 PROJEKT JE FUNKČNÍ** - Všechny kritické opravy byly dokončeny!
 
@@ -49,11 +49,11 @@ Pro rychlé a efektivní pokračování ve vývoji jsou nejdůležitější tyto
    - ⏳ Performance analytics
 
 2. **Chybějící strategie**
-   - ⏳ Breakout strategy
-   - ⏳ Volume strategy
+   - ✅ Breakout strategy
+   - ✅ Volume strategy
 
 3. **API oprávnění**
-   - ⏳ Nastavit trading oprávnění pro API klíče
+   - ✅ Nastavit trading oprávnění pro API klíče
 
 ### 📋 **Podrobný log dnešních oprav:**
 Viz [OPRAVY_DNES.md](/home/tv/bybit-trading-assistant/OPRAVY_DNES.md) pro kompletní seznam provedených oprav.
@@ -75,7 +75,7 @@ Viz [OPRAVY_DNES.md](/home/tv/bybit-trading-assistant/OPRAVY_DNES.md) pro komple
 
 3. **Implementace nových funkcí**
    - Začít s prioritními úkoly z ROADMAP.md
-   - Implementovat chybějící strategie (breakout, volume)
+   - ✅ Implementovat chybějící strategie (breakout, volume)
    - ✅ Streamlit dashboard implementován
 
 3. **Pokračování ve vývoji podle plánu**
@@ -94,8 +94,8 @@ Podrobná technická dokumentace je dostupná v těchto souborech:
 
 Aplikaci lze spustit pomocí těchto skriptů:
 
-- **[run_dashboard_only.sh](/home/tv/bybit-trading-assistant/run_dashboard_only.sh)** - spuštění pouze dashboardu (funkční)
-- **[run_bot.sh](/home/tv/bybit-trading-assistant/run_bot.sh)** - spuštění obchodního bota (vyžaduje opravy)
+- **[run_dashboard_only.sh](run_dashboard_only.sh)** - spuštění pouze dashboardu (funkční)
+- **[run_bot.sh](run_bot.sh)** - spuštění obchodního bota (funkční)
 - **[test_bybit_api_connection.py](/home/tv/bybit-trading-assistant/test_bybit_api_connection.py)** - testování API připojení
 - **[test_strategies.sh](/home/tv/bybit-trading-assistant/test_strategies.sh)** - testování obchodních strategií
 
