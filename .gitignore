@@ -50,3 +50,7 @@ data/*
 # OS
 .DS_Store
 Thumbs.db
+
+# Pytest artifacts
+pytest-of-tv/
+.pytest_cache/
