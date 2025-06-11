@@ -20,7 +20,7 @@ Tento dokument popisuje, jak spustit a používat Streamlit dashboard pro monito
 
 ## Popis sekcí dashboardu
 
-- **Zůstatek účtu**: aktuální zůstatek USDT načtený z Bybit API.
+- **Zůstatek účtu**: přehled USDT walletBalance, availableBalance, equity, celkový asset a tabulka držení kryptoměn.
 - **Otevřené pozice**: tabulka všech aktivních pozic s informacemi o velikosti, entry/current price a unrealized PnL.
 - **Historie obchodů**: interaktivní graf PnL jednotlivých obchodů za vybrané období.
 - **Tržní data**: výběr symbolu a interval, vykreslení candlestick grafu z historických dat.

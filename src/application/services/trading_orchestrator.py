@@ -11,6 +11,8 @@ from ...infrastructure.external.bybit.bybit_client import BybitClient
 from ...strategies.base_strategy import BaseStrategy
 from ...strategies.trend_following_strategy import TrendFollowingStrategy
 from ...strategies.rsi_macd_strategy import RsiMacdStrategy
+from ...strategies.breakout_strategy import BreakoutStrategy
+from ...strategies.volume_strategy import VolumeStrategy
 from ...config.settings import Settings
 
 
@@ -55,6 +57,10 @@ class TradingOrchestrator:
                     strategy = TrendFollowingStrategy(config)
                 elif name == "rsi_macd":
                     strategy = RsiMacdStrategy(config)
+                elif name == "breakout":
+                    strategy = BreakoutStrategy(config)
+                elif name == "volume":
+                    strategy = VolumeStrategy(config)
                 else:
                     logger.warning(f"Neznámá strategie: {name}")
                     continue

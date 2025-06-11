@@ -297,3 +297,16 @@ class BybitClient:
         except Exception as e:
             logger.error(f"Chyba při získávání zůstatku: {e}")
             return Decimal("0")
+    
+    async def get_account_assets(self) -> List[Dict[str, Any]]:
+        """Získá detailní přehled všech coinů na účtu (walletBalance, availableBalance, equity apod.)."""
+        params = {"accountType": "UNIFIED"}
+        try:
+            data = await self._make_request("GET", "/v5/account/wallet-balance", params, authenticated=True)
+            accounts = data.get("list", [])
+            if accounts:
+                return accounts[0].get("coin", [])
+            return []
+        except Exception as e:
+            logger.error(f"Chyba při získávání assetů: {e}")
+            return []

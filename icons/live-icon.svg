@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Zelené pozadí pro live -->
+  <rect width="64" height="64" rx="8" fill="#10B981" stroke="#059669" stroke-width="2"/>
+  
+  <!-- Červený dolar symbol -->
+  <g transform="translate(16, 12)">
+    <!-- Dolar znak -->
+    <path d="M16 4 L16 8 M16 40 L16 44 M8 12 C8 8 12 8 16 8 C20 8 24 8 24 12 C24 16 20 16 16 16 L16 20 C20 20 24 20 24 24 C24 28 20 28 16 28 C12 28 8 28 8 32 L16 32 L24 32" 
+          stroke="#DC2626" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- S písmeno stylizované -->
+    <path d="M8 16 C8 12 12 8 16 8 C20 8 24 12 24 16 M24 28 C24 32 20 36 16 36 C12 36 8 32 8 28" 
+          stroke="#DC2626" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+  
+  <!-- LIVE text -->
+  <text x="32" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#FFF">LIVE</text>
+</svg>

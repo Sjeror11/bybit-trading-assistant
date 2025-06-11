@@ -39,14 +39,35 @@ async def fetch_account_data():
         settings.api.bybit_api_secret,
         settings.api.bybit_testnet
     ) as client:
+        assets = await client.get_account_assets()
         balance = await client.get_account_balance()
         positions = await client.get_positions()
-    return balance, positions
+    return assets, balance, positions
 
-balance, positions = asyncio.run(fetch_account_data())
+assets, balance, positions = asyncio.run(fetch_account_data())
 
 st.subheader("Zůstatek účtu")
-st.metric(label="USDT Balance", value=f"{balance:.2f}")
+if assets:
+    df_assets = pd.DataFrame(assets)
+    for col in ("walletBalance", "availableBalance", "equity"):
+        if col not in df_assets.columns:
+            df_assets[col] = 0.0
+        df_assets[col] = df_assets[col].astype(float)
+    usdt = df_assets[df_assets["coin"] == "USDT"]
+    if not usdt.empty:
+        w = usdt["walletBalance"].iloc[0]
+        a = usdt["availableBalance"].iloc[0]
+        e = usdt["equity"].iloc[0]
+        c1, c2, c3 = st.columns(3)
+        c1.metric("USDT WalletBalance", f"{w:.2f}")
+        c2.metric("USDT Available", f"{a:.2f}")
+        c3.metric("USDT Equity", f"{e:.2f}")
+    total_eq = df_assets["equity"].sum()
+    st.metric("Total Asset (Equity)", f"{total_eq:.2f}")
+    df_hold = df_assets[df_assets["equity"] > 0][["coin", "walletBalance", "availableBalance", "equity"]]
+    st.dataframe(df_hold)
+else:
+    st.metric(label="USDT Balance", value=f"{balance:.2f}")
 
 st.subheader("Otevřené pozice")
 if positions:
